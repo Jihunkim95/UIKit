@@ -9,90 +9,37 @@ import Foundation
 import UIKit
 
 class ViewControllerEx02: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        createLayout()
+        createLayoutEx02()
     }
-    func createLayout() {
-            let superview = self.view
+    func createLayoutEx02() {
+        let superview = self.view!
 
-            // 뷰 생성
-            let myLabel = UILabel()
-            myLabel.translatesAutoresizingMaskIntoConstraints = false
-            myLabel.text = "My Label"
+        let label1 = UILabel()
+        label1.text = "Hello"
+//        label1.backgroundColor = .red
+        label1.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(label1)
 
-            let myButton = UIButton()
-            myButton.translatesAutoresizingMaskIntoConstraints = false
-            myButton.setTitle("My Button", for: UIControl.State.normal)
-            myButton.backgroundColor = UIColor.blue
+        let label2 = UILabel()
+        label2.text = "World"
+//        label2.backgroundColor = .green
+        label2.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(label2)
 
-            superview?.addSubview(myLabel)
-            superview?.addSubview(myButton)
+        let constraints = [
+            label1.centerXAnchor.constraint(equalTo: superview.centerXAnchor),
+            label1.topAnchor.constraint(equalTo: superview.topAnchor, constant: 100),
+            label2.centerYAnchor.constraint(equalTo: label1.centerYAnchor),
+            label2.leadingAnchor.constraint(equalTo: label1.trailingAnchor, constant: 20)
+        ]
 
-            // 제약 조건 생성 및 추가 제약 조건
-            /*
-            var myConstraint =
-              NSLayoutConstraint(item: myLabel,
-                                 attribute: NSLayoutConstraint.Attribute.centerY,
-                                 relatedBy: NSLayoutConstraint.Relation.equal,
-                                 toItem: superview,
-                                 attribute: NSLayoutConstraint.Attribute.centerY,
-                                 multiplier: 1.0,
-                                 constant: 0)
-
-            superview?.addConstraint(myConstraint)
-
-            myConstraint =
-              NSLayoutConstraint(item: myLabel,
-                                 attribute: NSLayoutConstraint.Attribute.centerX,
-                                 relatedBy: NSLayoutConstraint.Relation.equal,
-                                 toItem: superview,
-                                 attribute: NSLayoutConstraint.Attribute.centerX,
-                                 multiplier: 1.0,
-                                 constant: 0)
-
-            superview?.addConstraint(myConstraint)
-
-
-            myConstraint =
-              NSLayoutConstraint(item: myButton,
-                                 attribute: NSLayoutConstraint.Attribute.trailing,
-                                 relatedBy: NSLayoutConstraint.Relation.equal,
-                                 toItem: myLabel,
-                                 attribute: NSLayoutConstraint.Attribute.leading,
-                                 multiplier: 1.0,
-                                 constant: -10)
-
-            superview?.addConstraint(myConstraint)
-
-            myConstraint =
-              NSLayoutConstraint(item: myButton,
-                                 attribute: NSLayoutConstraint.Attribute.firstBaseline,
-                                 relatedBy: NSLayoutConstraint.Relation.equal,
-                                 toItem: myLabel,
-                                 attribute: NSLayoutConstraint.Attribute.firstBaseline,
-                                 multiplier: 1.0,
-                                 constant: 0)
-
-            superview?.addConstraint(myConstraint)      // 제약 조건 활성화(적용)
-            superview?.removeConstraint(myConstraint)   // 제약 조건 비활성화
-             */
-
-            myLabel.centerYAnchor.constraint(equalTo: superview!.centerYAnchor).isActive = true
-            myLabel.centerXAnchor.constraint(equalTo: superview!.centerXAnchor).isActive = true
-            myButton.trailingAnchor.constraint(equalTo: myLabel.leadingAnchor, constant: -10).isActive = true
-            var btnConst = myButton.firstBaselineAnchor.constraint(equalTo: myLabel.firstBaselineAnchor)
-
-            //...
-            btnConst.isActive = true
-
-        }
-
+        NSLayoutConstraint.activate(constraints)
+    }
 }
-
-
 
 
 

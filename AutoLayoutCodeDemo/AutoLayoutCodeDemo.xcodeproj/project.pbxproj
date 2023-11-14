@@ -17,6 +17,7 @@
 		5CDC5F872B02360B00E71003 /* ViewControllerEx02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5F862B02360B00E71003 /* ViewControllerEx02.swift */; };
 		5CDC5F892B024D4900E71003 /* ViewControllerEx03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5F882B024D4900E71003 /* ViewControllerEx03.swift */; };
 		5CDC5F8B2B024E2400E71003 /* ViewControllerEx04.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5F8A2B024E2400E71003 /* ViewControllerEx04.swift */; };
+		5CDC5F8D2B030DFF00E71003 /* ViewControllerEx05.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5F8C2B030DFF00E71003 /* ViewControllerEx05.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5CDC5F862B02360B00E71003 /* ViewControllerEx02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerEx02.swift; sourceTree = "<group>"; };
 		5CDC5F882B024D4900E71003 /* ViewControllerEx03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerEx03.swift; sourceTree = "<group>"; };
 		5CDC5F8A2B024E2400E71003 /* ViewControllerEx04.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerEx04.swift; sourceTree = "<group>"; };
+		5CDC5F8C2B030DFF00E71003 /* ViewControllerEx05.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerEx05.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +82,10 @@
 			isa = PBXGroup;
 			children = (
 				5CDC5F842B02314700E71003 /* ViewControllerEx01.swift */,
+				5CDC5F862B02360B00E71003 /* ViewControllerEx02.swift */,
 				5CDC5F882B024D4900E71003 /* ViewControllerEx03.swift */,
 				5CDC5F8A2B024E2400E71003 /* ViewControllerEx04.swift */,
-				5CDC5F862B02360B00E71003 /* ViewControllerEx02.swift */,
+				5CDC5F8C2B030DFF00E71003 /* ViewControllerEx05.swift */,
 			);
 			path = ViewControllterExample;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				5CDC5F742B022F3B00E71003 /* ViewController.swift in Sources */,
 				5CDC5F8B2B024E2400E71003 /* ViewControllerEx04.swift in Sources */,
 				5CDC5F892B024D4900E71003 /* ViewControllerEx03.swift in Sources */,
+				5CDC5F8D2B030DFF00E71003 /* ViewControllerEx05.swift in Sources */,
 				5CDC5F872B02360B00E71003 /* ViewControllerEx02.swift in Sources */,
 				5CDC5F702B022F3B00E71003 /* AppDelegate.swift in Sources */,
 				5CDC5F722B022F3B00E71003 /* SceneDelegate.swift in Sources */,

@@ -12,18 +12,26 @@ class ViewControllerEx04: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        createLayoutEx04()
     }
     
+    func createLayoutEx04() {
+        let superview = self.view!
 
-    /*
-    // MARK: - Navigation
+        let button = UIButton()
+        button.setTitle("Tap Me", for: .normal)
+        button.backgroundColor = .blue
+        button.setTitleColor(.white, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(button)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let constraints = [
+            button.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: -50),
+            button.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: 20),
+            button.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -20)
+        ]
+
+        NSLayoutConstraint.activate(constraints)
     }
-    */
 
 }
