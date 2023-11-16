@@ -59,7 +59,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     //피커 뷰가 선택되었을때 실행
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) {
+    private func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) {
         //선택한 이미지 이름 출력하기
         lblImageFileName.text = imageFileName[row]
         imageView.image = imageArray[row]

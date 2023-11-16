@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C84901F2B04B59A00A4A630 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C84901E2B04B59A00A4A630 /* PickerViewController.swift */; };
 		5CDC5FFB2B033A2900E71003 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5FFA2B033A2900E71003 /* AppDelegate.swift */; };
 		5CDC5FFD2B033A2900E71003 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5FFC2B033A2900E71003 /* SceneDelegate.swift */; };
 		5CDC5FFF2B033A2900E71003 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5FFE2B033A2900E71003 /* ViewController.swift */; };
@@ -30,7 +29,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5C84901E2B04B59A00A4A630 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		5CDC5FF72B033A2900E71003 /* PickerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CDC5FFA2B033A2900E71003 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CDC5FFC2B033A2900E71003 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 				5CDC600E2B033A7400E71003 /* images */,
 				5CDC5FFA2B033A2900E71003 /* AppDelegate.swift */,
 				5CDC5FFC2B033A2900E71003 /* SceneDelegate.swift */,
-				5C84901E2B04B59A00A4A630 /* PickerViewController.swift */,
 				5CDC5FFE2B033A2900E71003 /* ViewController.swift */,
 				5CDC60002B033A2900E71003 /* Main.storyboard */,
 				5CDC60032B033A2B00E71003 /* Assets.xcassets */,
@@ -201,7 +198,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C84901F2B04B59A00A4A630 /* PickerViewController.swift in Sources */,
 				5CDC5FFF2B033A2900E71003 /* ViewController.swift in Sources */,
 				5CDC5FFB2B033A2900E71003 /* AppDelegate.swift in Sources */,
 				5CDC5FFD2B033A2900E71003 /* SceneDelegate.swift in Sources */,
