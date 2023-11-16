@@ -7,13 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController,EditDelegate {
+class ViewController: UIViewController, EditDelegate {
 
     //전구초기화면 세팅 전구 변수 초기화
     let imgOn = UIImage(named: "lamp_on.png")
     let imgOff = UIImage(named: "lamp_off.png")
     
     var isOn = true
+    
     
     @IBOutlet var txMessage: UITextField!
     @IBOutlet var imgView: UIImageView!
@@ -57,6 +58,22 @@ class ViewController: UIViewController,EditDelegate {
             imgView.image = imgOff
             self.isOn = false
         }
+    }
+    
+    func didBtnZoomDone(_ controller: EditViewController, isZoom: Bool) {
+        
+        let scale: CGFloat = 2.0
+
+        var newWidth: CGFloat, newHeight: CGFloat
+
+        if isZoom {
+            newWidth = imgView.frame.width/scale
+            newHeight = imgView.frame.height/scale
+        }else{
+            newWidth = imgView.frame.width*scale
+            newHeight = imgView.frame.height*scale
+        }
+        imgView.frame.size = CGSize(width: newWidth, height: newHeight)
     }
 
 }

@@ -44,26 +44,20 @@
                                     <segue destination="2M7-AQ-xBw" kind="show" identifier="editButton" id="1Qv-t2-oTP"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="txU-3p-uBI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="txU-3p-uBI">
                                 <rect key="frame" x="30" y="245.33333333333331" width="333" height="522.66666666666674"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="333" id="BTs-WO-jqu"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="txU-3p-uBI" secondAttribute="trailing" constant="30" id="8hs-f9-D0k"/>
                             <constraint firstItem="sjv-S8-1oj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="FHj-sr-J6z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nYa-25-zwh" secondAttribute="trailing" constant="318" id="IVX-De-qtn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sjv-S8-1oj" secondAttribute="trailing" constant="30" id="aUV-zP-mJP"/>
                             <constraint firstItem="sjv-S8-1oj" firstAttribute="top" secondItem="nYa-25-zwh" secondAttribute="bottom" constant="10" id="daL-0X-Qey"/>
                             <constraint firstItem="nYa-25-zwh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="eIk-jL-9OH"/>
                             <constraint firstItem="nYa-25-zwh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="faj-xQ-JEL"/>
-                            <constraint firstItem="txU-3p-uBI" firstAttribute="top" secondItem="sjv-S8-1oj" secondAttribute="bottom" constant="50" id="rsH-Ep-Tg8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="txU-3p-uBI" secondAttribute="bottom" constant="50" id="wIj-pT-cGh"/>
-                            <constraint firstItem="txU-3p-uBI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="xL8-jW-xaC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="메인화면" id="U8p-DN-BVj">
@@ -126,12 +120,22 @@
                                     <action selector="btnDone:" destination="2M7-AQ-xBw" eventType="touchUpInside" id="6pQ-2g-qjg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ci-vA-Gy9">
+                                <rect key="frame" x="215" y="182" width="54" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="축소"/>
+                                <connections>
+                                    <action selector="btnZoom:" destination="2M7-AQ-xBw" eventType="touchUpInside" id="AlM-ug-96C"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="snX-Po-bCX"/>
                         <color key="backgroundColor" red="0.74847779079999999" green="0.31969742550000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="수정된 화면" id="pQn-x0-VF2"/>
                     <connections>
+                        <outlet property="btnValue" destination="8ci-vA-Gy9" id="6Sq-Xf-mLF"/>
                         <outlet property="lblWay" destination="x1d-kv-p9n" id="H1G-E8-Z8A"/>
                         <outlet property="swIsOn" destination="gap-0A-HfV" id="5HS-ba-I1e"/>
                         <outlet property="txMessage" destination="Xna-PN-IfT" id="duq-De-9tk"/>
