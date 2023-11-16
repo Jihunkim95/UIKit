@@ -74,6 +74,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="imgView" destination="txU-3p-uBI" id="OiL-7j-J9o"/>
                         <outlet property="txMessage" destination="sjv-S8-1oj" id="Qp8-tA-ZzC"/>
                     </connections>
                 </viewController>
@@ -105,6 +106,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gap-0A-HfV">
                                 <rect key="frame" x="310" y="186" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="swimageOnOff:" destination="2M7-AQ-xBw" eventType="valueChanged" id="fpB-Lv-OPR"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1d-kv-p9n">
                                 <rect key="frame" x="16" y="135" width="269" height="21"/>
@@ -129,6 +133,7 @@
                     <navigationItem key="navigationItem" title="수정된 화면" id="pQn-x0-VF2"/>
                     <connections>
                         <outlet property="lblWay" destination="x1d-kv-p9n" id="H1G-E8-Z8A"/>
+                        <outlet property="swIsOn" destination="gap-0A-HfV" id="5HS-ba-I1e"/>
                         <outlet property="txMessage" destination="Xna-PN-IfT" id="duq-De-9tk"/>
                     </connections>
                 </viewController>

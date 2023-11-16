@@ -7,12 +7,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,EditDelegate {
 
+    //전구초기화면 세팅 전구 변수 초기화
+    let imgOn = UIImage(named: "lamp_on.png")
+    let imgOff = UIImage(named: "lamp_off.png")
+    
+    var isOn = true
+    
     @IBOutlet var txMessage: UITextField!
+    @IBOutlet var imgView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        imgView.image = imgOn
+
     }
 
     //데이터 전달을 위한 함수
@@ -27,8 +37,26 @@ class ViewController: UIViewController {
             editViewController.textWayValue = "segue : Edit버튼 눌러서 온 데이터"
         }
         
-        //메세지수정
-        editViewController.textMsg = txMessage.text ?? ""
+        //메인이 수정으로
+        editViewController.textMsg = txMessage.text!
+        //메인화면의 전구 상태를 수정화면에 반영하기
+        editViewController.isOn = isOn
+        //수정된것이 메인
+        editViewController.delegate = self
+    }
+    
+    func didMessageEditDone(_ controller: EditViewController, message: String) {
+        txMessage.text = message
+    }
+    
+    func didImageOnOffDone(_ controller: EditViewController, isOn: Bool) {
+        if isOn {
+            imgView.image = imgOn
+            self.isOn = true
+        }else{
+            imgView.image = imgOff
+            self.isOn = false
+        }
     }
 
 }
