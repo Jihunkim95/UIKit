@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  CoreDataDemo
 //
-//  Created by 김지훈 on 2023/11/22.
+//  Created by 박준영 on 11/22/23.
 //
 
 import UIKit
