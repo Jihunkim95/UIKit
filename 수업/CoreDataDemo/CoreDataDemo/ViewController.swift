@@ -72,6 +72,7 @@ class ViewController: UIViewController {
             do {
                 let results = try context.fetch(request as! NSFetchRequest<NSFetchRequestResult>)
                 
+                // 검색된 관리 개체의 데이터 엑세스
                 if results.count > 0 {
                     let match = results[0] as! NSManagedObject
                     
@@ -79,6 +80,7 @@ class ViewController: UIViewController {
                     address.text = match.value(forKey: "address") as? String
                     phone.text = match.value(forKey: "phone") as? String
                     status.text = "Sucess Find : \(results.count)"
+                    
                 } else {
                     status.text = "Fail Find"
                 }

@@ -28,40 +28,44 @@ class ViewController: UIViewController {
       func initDB(){
           let filemgr = FileManager.default
           let dirPaths = filemgr.urls(for: .documentDirectory, in: .userDomainMask)[0]
-          //특정 경로 지정(이거 try하다가 안됨)
-  //        let specificPath = "/Users/kimjihun/Desktop/techit/git팀원들과협업/sqllite3/"
-  //        let databaseURL = dirPaths.appendingPathComponent(specificPath)
           
-          databasePath = dirPaths.appendingPathExtension("contact.db").path()
-  //        dump(databasePath)
-          if !filemgr.fileExists(atPath: databasePath){
-              
+          databasePath = dirPaths.appendingPathComponent("contact.db").path // 경로 설정
+          
+          if !filemgr.fileExists(atPath: databasePath) {
               let contactDB = FMDatabase(path: databasePath)
               
-              //열기
               if contactDB.open() {
                   let sql_stmt = "create table if not exists T_Test (id integer primary key autoincrement, name text, address text, phone text, email text)"
                   
-                  if !contactDB.executeStatements(sql_stmt){
+                  if !contactDB.executeStatements(sql_stmt) {
                       print("Error: \(contactDB.lastErrorMessage())")
                   }
                   contactDB.close()
               } else {
-                  //닫기
-                  print("Error:\(contactDB.lastErrorMessage())")
-                  
+                  print("Error: \(contactDB.lastErrorMessage())")
               }
-              
           }
       }
       @IBAction func saveContact(_ sender: Any) {
           let contactDB = FMDatabase(path: databasePath)
-  //        dump(databasePath)
+          dump(databasePath)
           if contactDB.open() {
-              let sql = "insert into T_Test (name, address, phone, email) values ('\(name.text ?? "")', '\(address.text ?? "")','\(phone.text ?? "")','\(email.text ?? "")')"
+            
+              let isDataExistQuery = "SELECT EXISTS (SELECT 1 FROM T_Test WHERE name = ?)"
               
               do {
-                  try contactDB.executeUpdate(sql, values: nil)
+                  let resultSet = try contactDB.executeQuery(isDataExistQuery, values: [name.text ?? ""])
+                  
+                  if resultSet.next(), resultSet.bool(forColumnIndex: 0) {
+                      // 데이터가 존재하면 UPDATE 수행
+                      let updateQuery = "UPDATE T_Test SET name = ?, address = ?, phone = ?, email = ? WHERE name = ?"
+                      try contactDB.executeUpdate(updateQuery, values: [name.text ?? "", address.text ?? "", phone.text ?? "", email.text ?? "", name.text ?? ""])
+                  } else {
+                      // 데이터가 존재하지 않으면 INSERT 수행
+                      let insertQuery = "INSERT INTO T_Test (name, address, phone, email) VALUES (?, ?, ?, ?)"
+                      try contactDB.executeUpdate(insertQuery, values: [name.text ?? "", address.text ?? "", phone.text ?? "", email.text ?? ""])
+                  }
+                  
               } catch {
                   status.text = "contact 추가 실패!!"
               }
